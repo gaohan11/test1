@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<script src="js.js"></script>-->
+</head>
+<body onload="clock()">
+<div id="tt"></div>
+<script>
+    var time=new Date();
+    function checkTime(i) {
+        if(i<10){
+            i='0'+i;
+        }
+        return i;
+    }
+    function clock() {
+        var t;
+        var time=new Date();
+        time.getFullYear(2018,4,10);
+        var y=time.getYear(),m1=time.getMonth(),d=time.getDate(),h=time.getHours(),m=time.getMinutes(),s=time.getSeconds();
+        m=checkTime(m);
+        s=checkTime(s);
+        y=y+1900;
+        m1+=1;
+        document.getElementById('tt').innerHTML='现在是:'+y+'年'+m1+'月'+d+'日,'+h+':'+m+':'+s;
+        t=setTimeout('clock()',500);
+        }
+
+</script>
+</body>
+</html>
